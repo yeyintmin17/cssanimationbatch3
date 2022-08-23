@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Button 5 Own</title>
+        <style type="text/css">
+            body{
+                font-family: sans-serif;
+                height: 100vh;
+                background-color: #222;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                overflow: hidden;
+            }
+
+            .btn{
+                background-color: #f72a57;
+
+                width: 220px;
+                padding: 20px 30px;
+                border: none;
+                outline: none;
+                margin: 8px;
+
+                font-size: 25px;
+                text-transform: uppercase;
+                letter-spacing: 3px;
+
+                display: flex;
+                align-items: center;
+
+                cursor: pointer;
+                user-select: none;
+
+                overflow: hidden;
+
+                position: relative;
+            }
+
+            .btn > .text{
+                color: #fff;
+
+                transform: scaleX(0.6);
+                transform-origin: left;
+
+                transition: color 0.25s linear;
+            }
+
+            .btn:hover .text{
+                color: #ffed4d;
+                transition-delay: 0.25s;
+            }
+
+            .btn > .line{
+                width: 50px;
+                height: 3px;
+                background-color: #fff;
+
+                position: absolute;
+                right: 0;
+                
+                transition: all 0.25s linear;
+            }
+
+            .btn:hover .line{
+                background-color: #ffed4d;
+                right: 30px;
+                transform: skew(-45deg);
+            }
+
+            .btn::before,
+            .btn::after{
+                content: "";
+                width: 60%;
+                height: 8px;
+                background-color: whitesmoke;
+
+                position: absolute;
+
+                transform: skewX(45deg);
+                transition: all 0.25s linear;
+            }
+
+            .btn::before{
+                top: 0;
+                right: 110%;
+            }
+
+            .btn:hover::before{
+                right: -10%;
+            }
+            
+            .btn::after{
+                bottom: 0;
+                left: 110%;
+            }
+
+            .btn:hover::after{
+                left: -10%;
+            }
+
+            .btn:active{
+                animation: myani1 7s infinite ease-in-out;
+            }
+
+            @keyframes myani1{
+                0%{
+                    box-shadow: none;
+                    filter: brightness(100%);
+                    transform: perspective(100px) scaleX(1) skew(0deg);
+                }
+
+                14%{
+                    box-shadow: none;
+                    filter: brightness(100%);
+                    transform: perspective(100px) scaleX(1.1) skew(20deg);
+                }
+
+                28%, 56%, 84%{
+                    box-shadow: none;
+                    filter: brightness(100%);
+                    transform: perspective(100px) scaleX(0.8) skew(0deg);
+                }
+
+                34%{
+                    box-shadow: 5px -5px 0 0 #3ebdf0,
+                                10px -10px 0 0 #ff142c;         
+                    filter: brightness(120%);
+                    transform: perspective(100px) scaleX(1.1) skew(-20deg);
+                }
+
+                70%{
+                    box-shadow: none;
+                    filter: brightness(100%);
+                    transform: perspective(100px) scaleX(1.1) skew(-20deg);
+                }
+
+                90%{
+                    box-shadow: -5px 5px 0 0 #ffef14,
+                                -10px 10px 0 0 #ff14e4;                   
+                    filter: brightness(120%);
+                    transform: perspective(100px) scaleX(1.1) skew(20deg);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <button type="button" class="btn">
+            <span class="text">ReadMore</span>
+            <span class="line"></span>
+        </button>
+    </body>
+</html>

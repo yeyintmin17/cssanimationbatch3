@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Button 3 Own</title>
+        <style type="text/css">
+            body{
+                font-family: sans-serif;
+                height: 100vh;
+                background-color: #222;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                overflow: hidden;
+            }
+
+            button{
+                background-color: transparent;
+                color: #fff;
+
+                padding: 22px 60px;
+                border: none;
+                border-radius: 60px;
+                margin: 15px;
+
+                font-size: 25px;
+                letter-spacing: 2px;
+
+                cursor: pointer;
+                user-select: none;
+
+                overflow: hidden;
+
+                position: relative;
+            }
+
+            button > span{
+                width: 100%;
+                height: 100%;
+                border-radius: inherit;
+
+                position: absolute;
+                z-index: -1;
+
+                transition: all 0.15s linear;
+            }
+
+            button > span:nth-of-type(1){
+                background-color: #ffd480;
+                left: 0;
+                top: 0;
+            }
+
+            button > span:nth-of-type(2){
+                background-color: #be76f5;
+                left: 20%;
+                top: 0;
+            }
+
+            button > span:nth-of-type(3){
+                background-color: #f071c3;
+                left: 50%;
+                top: -50%;
+            }
+
+            button > span:nth-of-type(4){
+                background-color: #50a1f2;
+                left: 51%;
+                top: 48%;
+            }
+
+            button:hover > span:nth-of-type(1){
+                background-color: #50a1f2;
+            }
+
+            button:hover > span:nth-of-type(2){
+                background-color: #f071c3;
+                left: 12%;
+            }
+
+            button:hover > span:nth-of-type(3){
+                background-color: #be76f5;
+                left: 40%;
+                top: -40%;
+            }
+
+            button:hover > span:nth-of-type(4){
+                background-color: #ffd480;
+                left: 41%;
+                top: 38%;
+            }
+
+            button:active{
+                border: 3px solid #f4f4f4;
+                transform: scale(0.98);
+            }
+        </style>
+    </head>
+    <body>
+        <button type="button" class="btn">
+            Button
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </body>
+</html>

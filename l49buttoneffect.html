@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>L49 Button Effect</title>
+        <style type="text/css">
+            body{
+                height: 100vh;
+                background-color: #000;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .download-btn{
+                width: 400px;
+                height: 100px;
+                background: steelblue;
+                color: #fff;
+                text-decoration: none;
+                text-align: center;
+                line-height: 100px;
+
+                /* the root element's font-size */
+                /* 1 rem = 16 px */
+                font-size: 2.5rem;
+                font-weight: bold;
+
+                border-radius: 20px;
+            }
+
+            .download-btn:hover{
+                color: #000;
+            }
+
+            .download-btn:hover{
+                background-image: linear-gradient(
+                    128.79deg,
+                    transparent 10%,
+                    #f4f4f4 10% 20%,
+                    transparent 20% 30%,
+                    #f4f4f4 30% 40%,
+                    transparent 40% 50%,
+                    #f4f4f4 50% 60%,
+                    transparent 60% 70%,
+                    #f4f4f4 70% 80%,
+                    transparent 80% 90%,
+                    #f4f4f4 90% 100%
+                );
+                background-size: 30%;
+
+                animation: myani 5s linear infinite;
+            }
+
+            @keyframes myani{
+                from{
+                    background-position: 0 0;
+                }
+
+                to{
+                    background-position: 400px 0;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <a href="#" class="download-btn">Hover Me</a>
+    </body>
+</html>

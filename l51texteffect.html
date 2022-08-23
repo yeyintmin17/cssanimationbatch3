@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>L51 Text Effect</title>
+        <style type="text/css">
+            body{
+                background-color: #000;
+                height: 100vh;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            h1{
+                color: transparent;
+                font-size: 3rem;
+                text-transform: uppercase;
+                letter-spacing: 10px;
+
+                -webkit-text-stroke: 2px red;
+
+                position: relative;
+
+                overflow: hidden;
+            }
+
+            h1::before{
+                content: '';
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(
+                    90deg,
+                    transparent 0%,
+                    #000 0%,
+                    #000 100%
+                );
+
+                position: absolute;
+                left: 10%;
+                top: 0;
+
+                animation-name: myani;
+                animation-duration: 5s;
+                animation-timing-function: linear;
+                animation-iteration-count: infinite;
+                animation-direction: alternate;
+            }
+
+            @keyframes myani{
+                from{
+                    left: 100%;
+                }
+                
+                to{
+                    left: 0%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Thank You For Shopping With Us...</h1>
+    </body>
+</html>

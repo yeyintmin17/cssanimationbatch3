@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>button 2 Own</title>
+        <style type="text/css">
+            *{
+                box-sizing: border-box;
+            }
+
+            body{
+                font-family: sans-serif;
+                height: 100vh;
+                background-color: #222;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                overflow: hidden;
+            }
+
+            .btn{
+                background-color: inherit;
+                color: #fff;
+                
+                padding: 15px 30px;
+                border: 2px solid #444;
+
+                font-size: 20px;
+
+                letter-spacing: 3px;
+                text-decoration: none;
+                text-transform: uppercase;
+
+                position: relative;
+
+                transition: all 0.25s linear;
+            }
+
+            .btn::before,
+            .btn::after{
+                content: '';
+
+                width: 12px;
+                height: 8px;
+                background-color: inherit;
+
+                box-sizing: inherit;
+
+                border: 2px solid #faef57;
+
+                position: absolute;
+
+                transition: all 0.25s linear;
+            }
+
+            .btn::before{
+                top: -4px;
+                right: 30px;
+            }
+
+            .btn::after{
+                bottom: -4px;
+                left: 30px;
+            }
+
+            .btn:hover{
+                color: #faef57;
+                border-color: #faef57;
+
+                letter-spacing: 4px;
+                box-shadow: 0 0 40px 0 #faef57;
+
+                transform: scaleX(1.15);
+            }
+
+            .btn:hover::before, .btn:hover::after{
+                width: 20px;
+            }
+
+            .btn:hover::before{
+                right: calc(100% - 48px);
+            }
+
+            .btn:hover::after{
+                left: calc(100% - 45px);
+            }
+        </style>
+    </head>
+    <body>
+        <a href="#" class="btn">Button</a>
+    </body>
+</html>

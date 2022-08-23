@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>L18 HW 2</title>
+        <style type="text/css">
+            body{
+                font-family: sans-serif;
+
+                background-color: #333;
+                height: 100vh;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                overflow: hidden;
+            }
+
+            /* Start Ani Button */
+            button{
+                background-color: transparent;
+                color: transparent;
+            
+                font-size: 40px;
+                
+                display: block;
+
+                padding: 0 80px;
+                border: 5px solid #000;
+
+                line-height: 130px;
+
+                cursor: pointer;
+                user-select: none;
+
+                position: relative;
+
+                overflow: hidden;
+            }
+
+            button::before,
+            button::after{
+                padding: 0 8px;
+
+                position: absolute;
+                left: 0;
+                top: 0;
+                right: 0;
+                bottom: 0;
+
+                transition: all 0.5s cubic-bezier(0, 0.25, 0.5, 1);
+            }
+
+            button::before{
+                content: 'Press Me';
+
+                background-color: steelblue;
+                color: #fff;
+            }
+
+            button::after{
+                content: 'Hover Me';
+
+                background-color: yellow;
+                color: #000;
+
+                z-index: 2;
+            }
+
+            button:hover::before{
+                content: 'Me';
+                
+                text-align: left;
+
+                transform: translateX(50%);
+            }
+
+            button:hover::after{
+                content: 'Press';
+
+                text-align: right;
+
+                transform: translateX(-50%);
+            }
+
+            button:active::before{
+                content: 'You';
+            }
+
+            button:active::after{
+                content: 'Thank';
+            }
+            /* End Ani Button */
+
+            /* Start Dice */
+            #dice{
+                width: 50px;
+                height: 50px;
+
+                position: fixed;
+                bottom: 15%;
+                z-index: 100;
+
+                perspective: 2000px;
+                transform-style: preserve-3d;
+
+                transform: rotateX(-20deg) rotateY(45deg);
+
+                animation: myani1 7.5s infinite linear;
+            }
+
+            #dice > span{
+                background-color: #222;
+                color: #42f548;
+                
+                font-size: 20px;
+
+                border: 2px solid #42f548;
+
+                text-align: center;
+                line-height: 46px;
+
+                position: absolute;
+                left: 0;
+                top: 0;
+                right: 0;
+                bottom: 0;
+            }
+
+            .front{
+                transform: translateZ(25px);
+            }
+
+            .behind{
+                transform: translateZ(-25px) rotateY(-180deg) ;
+            }
+
+            .left{
+                transform: rotateY(-90deg) translateZ(25px);
+            }
+
+            .right{
+                transform: rotateY(90deg) translateZ(25px);
+            }
+
+            .top{
+                transform: rotateX(90deg) translateZ(25px);
+            }
+
+            .bottom{
+                transform: rotateX(-90deg) translateZ(25px);
+            }
+
+            @keyframes myani1 {
+                6%, 12%{
+                    transform: rotateX(-20deg) rotateY(45deg);
+                }
+
+                18%, 24%{
+                    transform: rotate(0deg);
+                }
+
+                30%, 36%{
+                    transform: rotateY(90deg);
+                }
+
+                42%, 48%{
+                    transform: rotateY(180deg);
+                }
+
+                54%, 60%{
+                    transform: rotateX(-90deg);
+                }
+
+                66%, 72%{
+                    transform: rotateY(-90deg);
+                }
+
+                78%, 84%{
+                    transform: rotateX(90deg);
+                }
+
+                90%, 96%{
+                    transform: rotateY(-90deg);
+                }
+            }
+            /* End Dice */
+        </style>
+    </head>
+    <body>
+        <button type="button">Hover Me</button>
+
+        <div id="dice">
+            <span class="front">W</span>
+            <span class="left">D</span>
+            <span class="behind">F</span>
+            <span class="top">6</span>
+            <span class="right">7</span>
+            <span class="bottom">9</span>
+        </div>
+    </body>
+</html>
+
